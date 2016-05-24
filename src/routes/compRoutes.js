@@ -59,14 +59,14 @@ var router = function(nav) {
                         var transpoter = nodemailer.createTransport({
                             service: "Gmail",
                             auth: {
-                                user: 'haidermalik504@gmail.com',
-                                pass: 'htc@1234'
+                                user: 'user@gmail.com',
+                                pass: '12345'
                             }
                         });
 
                         for (var i = 0; i < participants.length; i++) {
                             var mailOptions = {
-                                from: 'Haider Malik <haidermalik504@gamil.com>',
+                                from: 'Danial Alvi <user@gmail.com>',
                                 to: participants[i].email,
                                 subject: event.name,
                                 text: event.desc,
