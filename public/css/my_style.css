@@ -1,0 +1,4 @@
+/*style the first image in competitions*/
+div.he-wrap>:first-child {
+    height: 210px;
+}

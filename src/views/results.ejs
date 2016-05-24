@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../views/partials/head.ejs %>
+
+<body>
+
+<% include ../views/partials/header.ejs %>
+
+<div id="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>eCompetition
+                    <p class="lead"></p>
+                </h1>
+            </div>
+
+        </div>
+    </div>
+    <!-- /cont -->
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-16">
+
+            <div class="panel">
+                <div class="panel-body" style="min-height: 500px">
+                    <div class="row invisible">
+                        <div class="col-lg-3"><span class="h4 text-uppercase text-info">First Name</span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase text-info">Last Name</span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase text-info">Remarks</span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase text-info">votes</span></div>
+
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-3"><span class="h4 text-uppercase text-info">First Name</span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase text-info">Last Name</span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase text-info">Remarks</span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase text-info">votes</span></div>
+
+                    </div>
+                    <hr>
+                    <div class="row"></div>
+
+                    <% for(var i = 0; i < results.length; i++) { %>
+                    <!--/judges-->
+                    <div class="row ">
+                        <div class="col-lg-3"><span class="h4 text-uppercase"><%=results[i].firstName%></span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase"><%=results[i].lastName%></span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase"><%=results[i].judgesRemarks%></span></div>
+                        <div class="col-lg-3"><span class="h4 text-uppercase"><%=results[i].vote%></span></div>
+
+                    </div>
+
+                    <hr>
+                    <% } %>
+
+                    <!--/judges-->
+
+
+                    <!--<a href="/" class="btn btn-primary pull-right btnNext">More <i-->
+                                <!--class="glyphicon glyphicon-chevron-right"></i></a>-->
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <!--/col-12-->
+    </div>
+</div>
+
+
+<hr>
+
+<% include ../views/partials/footer.ejs %>
+<% include ../views/partials/jsdefaults.ejs %>
+</body>
+
+</html>

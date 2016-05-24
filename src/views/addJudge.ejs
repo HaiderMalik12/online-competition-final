@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../views/partials/head.ejs %>
+
+    <body>
+
+        <% include ../views/partials/header.ejs %>
+
+            <div class="container" style="margin-top:50px">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="panel">
+                            <div class="panel-body">
+
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <!--panel for creating competition-->
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <form class="form" action="/Judges/add" method="POST">
+                                                    <div class="form-group">
+                                                        <label for="nameField">Judge Name</label>
+                                                        <input class="form-control" type="text" name="judgeName" id="nameField" placeholder="Judge Name" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="nameField">Email Address</label>
+                                                        <input class="form-control" type="email" name="email" id="nameField" placeholder="Email Address" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="nameField">Image Link</label>
+                                                        <input class="form-control" type="url" name="img" id="nameField" placeholder="Image" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="nameField">Occupation</label>
+                                                        <input class="form-control" type="text" name="ocu" id="nameField" placeholder="Occupation" required>
+                                                    </div>
+
+                                                    <!--<div class="form-group">-->
+                                                        <!--<label for="imgField">Image Url</label>-->
+                                                        <!--<input class="form-control" type="text" name="imgUrl" ,id="imgField" placeholder="Post Image Url" required>-->
+                                                    <!--</div>-->
+
+                                                    <input type="submit" value="Add" class="btn btn-theme">
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                        <!--/Panel-->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <% include ../views/partials/footer.ejs %>
+                            <% include ../views/partials/jsdefaults.ejs %>
+    </body>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>

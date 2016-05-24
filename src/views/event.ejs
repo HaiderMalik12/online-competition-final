@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../views/partials/head.ejs %>
+
+    <body>
+
+        <!-- Fixed navbar -->
+        <% include ../views/partials/header.ejs %>
+
+            <!-- *****************************************************************************************************************
+    HEADERWRAP
+	 ***************************************************************************************************************** -->
+            <div id="headerwrap">
+                <div class="container">
+
+                    <div class="container centered">
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+
+                                <h1> Online Competition Management</h1>
+                                <h5 class="lead">We are providing a platform namely “Online Competition Management” for online competitions which will allow registered users to take part in any competition going on the website. </h5>
+
+
+                                <!--<p>WEB DESIGNER - BLACKTIE.CO</p>-->
+                            </div>
+
+                            <!-- --/row ---->
+                        </div>
+                        <!-- --/container ---->
+                    </div>
+                    <!-- /row -->
+                </div>
+                <!-- /container -->
+            </div>
+            <!-- /headerwrap -->
+
+            <!--Service Section start-->
+
+            <div id="service">
+                <div class="container">
+                    <h3 class="centered" style="margin-bottom:20px">Competition Types</h3>
+                    <div class="row centered">
+                        <div class="col-md-4">
+                            <i class="fa fa-music"></i>
+                            <h4>Singing Competition</h4>
+                            <p>Show off your singing chops by sending in your singing demo.We are mainly judging you on your singing ability and experience. Usually, we prefer youtube video demo links but we also accept audio links and file submissions.Winners
+                                will qualify to win CASH & PRIZES!</p>
+                            <p><br><a href="#" class="btn btn-theme">More Info</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa fa-male"></i>
+                            <h4>Dancing Competition</h4>
+                            <p>Even the most accomplished dancers have off-days. We miss cues, drop our center, end up a count behind. It happens. But when it happens on competition day, and the judges’ scores reflect our performance, it’s hard to shake
+                                it off.</p>
+                            <p><br><a href="#" class="btn btn-theme">More Info</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa fa-code"></i>
+                            <h4>Coding Competition</h4>
+                            <p>Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning. That's the thing
+                                about people who think they hate computers..
+                            </p>
+                            <p><br><a href="#" class="btn btn-theme">More Info</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- --/container ---->
+            </div>
+            <!--/end Services Section-->
+
+            <!-- *****************************************************************************************************************
+	 Competitions SECTION
+	 ***************************************************************************************************************** -->
+            <div id="portfoliowrap">
+                <h3>Latest Competitions</h3>
+                <div class="portfolio-centered">
+                    <div class="recentitems portfolio">
+
+                        <% for(var i =0; i<events.length; i++) {%>
+                            <div class="portfolio-item graphic-design">
+                                <div class="he-wrap tpl6">
+                                    <img src="<%=events[i].imgUrl %>" alt="">
+                                    <div class="he-view">
+                                        <div class="bg a0" data-animate="fadeIn">
+                                            <h3 class="a1" data-animate="fadeInDown"><%=events[i].name %></h3>
+                                            <a data-rel="prettyPhoto" href="<%=events[i].imgUrl %>" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                                        </div>
+                                        <!-- he bg -->
+                                    </div>
+                                    <!-- he view -->
+                                </div>
+                                <!-- he wrap -->
+                            </div>
+                            <!-- end col-12 -->
+                            <%}%>
+                    </div>
+                    <!-- portfolio -->
+                </div>
+                <!-- portfolio container -->
+            </div>
+            <!--/Portfoliowrap -->
+
+
+            <!-- *****************************************************************************************************************
+	 MIDDLE CONTENT
+	 ***************************************************************************************************************** -->
+
+            <div class="container mtb">
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-1">
+                        <h4>More About Ecompetition</h4>
+                        <p> We are providing a platform namely “Online Competition Management” for online competitions which will allow registered users to take part in any competition going on the website. Their work will be judged by the registered voters
+                            and judges accordingly. Organizer will create a competition for any category they want. Organizers can post the competitions they are organizing and other people can get to know about the competitions being organized in their
+                            country. </p>
+                        <p><br/><a href="about.html" class="btn btn-theme">More Info</a></p>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h4>Result Announced</h4>
+                        <div class="hline"></div>
+                        <p><a href="#">Sports Competition</a></p>
+                        <p><a href="#">Design Competition</a></p>
+                        <p><a href="#">Singig Competition</a></p>
+                        <p><a href="#">Dancing Competition</a></p>
+                        <p><a href="#">Coding Competition</a></p>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h4>Winners</h4>
+                        <div class="hline"></div>
+                        <p><a href="single-post.html">Haider Malik</a></p>
+                        <p><a href="single-post.html">Danial Alvi</a></p>
+                        <p><a href="single-post.html">Atif Khurshid</a></p>
+                        <p><a href="single-post.html">Martin Garrix</a></p>
+                        <p><a href="single-post.html">Nervo</a></p>
+                    </div>
+
+                </div>
+                <! --/row -->
+            </div>
+            <! --/container -->
+
+
+
+
+            <!-- *****************************************************************************************************************
+	 FOOTER
+	 ***************************************************************************************************************** -->
+            <% include ../views/partials/footer.ejs %>
+
+                <!-- Bootstrap core JavaScript
+    ================================================== -->
+                <!-- Placed at the end of the document so the pages load faster -->
+                <% include ../views/partials/jsdefaults.ejs %>
+
+
+                    <script>
+                        // Portfolio
+                        (function($) {
+                            "use strict";
+                            var $container = $('.portfolio'),
+                                $items = $container.find('.portfolio-item'),
+                                portfolioLayout = 'fitRows';
+
+                            if ($container.hasClass('portfolio-centered')) {
+                                portfolioLayout = 'masonry';
+                            }
+
+                            $container.isotope({
+                                filter: '*',
+                                animationEngine: 'best-available',
+                                layoutMode: portfolioLayout,
+                                animationOptions: {
+                                    duration: 750,
+                                    easing: 'linear',
+                                    queue: false
+                                },
+                                masonry: {}
+                            }, refreshWaypoints());
+
+                            function refreshWaypoints() {
+                                setTimeout(function() {}, 1000);
+                            }
+
+                            $('nav.portfolio-filter ul a').on('click', function() {
+                                var selector = $(this).attr('data-filter');
+                                $container.isotope({
+                                    filter: selector
+                                }, refreshWaypoints());
+                                $('nav.portfolio-filter ul a').removeClass('active');
+                                $(this).addClass('active');
+                                return false;
+                            });
+
+                            function getColumnNumber() {
+                                var winWidth = $(window).width(),
+                                    columnNumber = 1;
+
+                                if (winWidth > 1200) {
+                                    columnNumber = 5;
+                                } else if (winWidth > 950) {
+                                    columnNumber = 4;
+                                } else if (winWidth > 600) {
+                                    columnNumber = 3;
+                                } else if (winWidth > 400) {
+                                    columnNumber = 2;
+                                } else if (winWidth > 250) {
+                                    columnNumber = 1;
+                                }
+                                return columnNumber;
+                            }
+
+                            function setColumns() {
+                                var winWidth = $(window).width(),
+                                    columnNumber = getColumnNumber(),
+                                    itemWidth = Math.floor(winWidth / columnNumber);
+
+                                $container.find('.portfolio-item').each(function() {
+                                    $(this).css({
+                                        width: itemWidth + 'px'
+                                    });
+                                });
+                            }
+
+                            function setPortfolio() {
+                                setColumns();
+                                $container.isotope('reLayout');
+                            }
+
+                            $container.imagesLoaded(function() {
+                                setPortfolio();
+                            });
+
+                            $(window).on('resize', function() {
+                                setPortfolio();
+                            });
+                        })(jQuery);
+                    </script>
+    </body>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>

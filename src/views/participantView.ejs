@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../views/partials/head.ejs %>
+<link rel="stylesheet" href="/css/thumbnail-gallery.css">
+
+<body>
+
+<% include ../views/partials/header.ejs %>
+
+<div id="blue">
+    <div class="container">
+        <div class="row">
+            <h3 class="centered"> <%= participant.firstName %> <%= participant.lastName %></h3>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /blue -->
+
+<!-- *****************************************************************************************************************
+TITLE & CONTENT
+***************************************************************************************************************** -->
+
+<div class="container mt">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 centered">
+            <iframe width="560" height="315" src="<%= participant.videoUrl %>" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="col-lg-5 col-lg-offset-1">
+            <div class="spacing"></div>
+            <h4>Project Description</h4>
+
+            <p>
+                <%= participant.desc %>
+            </p>
+
+            <% if (user && user.local.category === 'Judge'){ %>
+            <form role="form" action="/judgesRemarks" method="post" class="form">
+                <div class="form-group">
+                    <label for="comment">Judges Remarks:</label>
+                    <textarea class="form-control" rows="5" id="comment" name="judgesRemarks"></textarea>
+                    <input type="hidden" name="id" value="<%= participant._id %>">
+                </div>
+                <input type="submit" class="btn btn-theme" value="Post"/>
+            </form>
+            <% } %>
+            <hr/>
+
+            <!--/Judges panel-->
+            <!--Media for displying remarks-->
+            <h4>Judges Remarks</h4>
+            <% var length = participant.judgesRemarks.length %>
+            <% for(var j = 0; j < length; j++) { %>
+            <div class="media">
+
+
+                <div class="media-body">
+
+                    <%= participant.judgesRemarks[j] %>
+                </div>
+
+            </div>
+            <% } %>
+
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-1">
+            <div class="spacing"></div>
+            <h4>Participant Details</h4>
+
+            <div class="hline"></div>
+
+            <p><b>Email: </b>
+                <%= participant.email %>
+            </p>
+
+            <p><b>Total Votes: </b><span class="badge badge-theme"><%= participant.vote %></span></p>
+            <% if (user && user.local.category === 'Voter'){ %>
+            <p>
+
+            <form action="/addVotes" method="post" class="form">
+                <input type="hidden" name="id" value="<%= participant._id %>">
+                <input type="submit" class="btn btn-theme" value="Vote"/>
+            </form>
+            </p>
+            <% } %>
+        </div>
+
+
+    </div>
+
+</div>
+<! --/row -->
+</div>
+<! --/container -->
+
+<hr/>
+<% include ../views/partials/footer.ejs %>
+<% include ../views/partials/jsdefaults.ejs %>
+</body>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
